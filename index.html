@@ -30,14 +30,20 @@
     </header>
     <div class="container m-5 row justify-content around">
       <!-- Timeblocks go here -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
       <div class="col-2 col-md-2">
         <h2>Times</h2>
         <ul id="time-blocks" class="row">
-          <li>rawr</li>
+          <script class="col-2 col-md-2">
+            var timeBlocks;
+
+            console.log(moment().format("hA"));
+          </script>
         </ul>
       </div>
       <div class="col-8 col-md-8">
-        <h2>Events</h2>
+        <h2>weird shit</h2>
         <ul class="row">
           <li>roar</li>
         </ul>
@@ -49,6 +55,5 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
