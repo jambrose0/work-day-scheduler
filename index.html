@@ -28,20 +28,27 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container row">
+    <div id="schedules" class="container">
       <!-- Timeblocks go here -->
+      <div class="row">
+        <h3 id="time-block" class="hour col-1 col-md-2 col-sm-2">9:00 AM</h3>
 
-      <div id="time-block" class="col-1 col-md-2 col-sm-2">
-        <h3>Times</h3>
-      </div>
-      <div id="task-block" class="col-10 col-md-8 col-sm-8">
-        <h2>Tasks</h2>
-      </div>
-      <div id="store-block" class="col-1 col-md-2 col-sm-2">
-        <h3>Storage</h3>
+        <textarea id="task-block" class="description col-10 col-md-8 col-sm-8">
+        </textarea>
+
+        <button id="store-block" class="saveBtn col-1 col-md-2 col-sm-2">
+          <a
+            href="https://www.flaticon.com/free-icons/save"
+            title="save icons"
+          ></a>
+          <i>Save</i>
+        </button>
       </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/scipt.js"></script>
+    <!-- add momentjs above 45 -->
   </body>
 </html>
