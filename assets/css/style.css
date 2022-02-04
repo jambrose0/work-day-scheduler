@@ -64,6 +64,10 @@ textarea {
   background-color: #06aed5;
   color: white;
 }
+.saveBtn a {
+  max-width: 10px;
+  max-height: 10px;
+}
 
 .saveBtn i:hover {
   font-size: 20px;

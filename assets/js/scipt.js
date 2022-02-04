@@ -19,13 +19,16 @@ function workDay() {
       .addClass("description col-10 col-md-8 col-sm-8")
       .attr("id", "task-blocks" + index);
 
-    var makeSave = $("<button>").addClass("saveBtn col-1 col-md-2 col-sm-2");
+    var makeSave = $("<button>")
+      .addClass("saveBtn col-1 col-md-2 col-sm-2")
+      .attr("id", "store-block" + index);
 
     makeRow.append(makeTime);
     makeRow.append(makeTask);
     makeRow.append(makeSave);
-    var toPrint = moment(workDay).add(1 + index, "hours");
-    // .format(hhA);
+    var toPrint = moment(workDay)
+      .add(1 + index, "hours")
+      .format("hh:mm A");
     $("#schedules").append(makeRow);
   }
 }
