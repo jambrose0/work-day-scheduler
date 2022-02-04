@@ -1,38 +1,40 @@
 //dom elements
-var workHours = document.getElementById("time-blocks");
-var tasks = document.getElementById("task-blocks");
-var saves = document.getElementById("store-blocks");
+var workHours = document.getElementById("time-block");
+var tasks = document.getElementById("task-block");
+var saves = document
+  .getElementById("store-block")
+  .addEventListener("click", keepTasks());
 
-//global vars
-// var workDay =
+//function to check time and apply css as needed
+function handleUpdatingHours() {
+  // establish a variable for the current time using moment.js
 
-//time-blocks
-// function workDay() {
-//   moment().startOf("day");
-//   for (var index = 9; index <= 16; index++) {
-//     var makeRow = $("<div>").addClass("row");
-//     var makeTime = $("<h3>", +index)
-//       .addClass("hour col-1 col-md-2 col-sm-2")
-//       .attr("id", "time-block");
+  var timeNow = moment();
+  // use a for loop that iterates through each time value you have set as your time variables,
+  for (var i = 0; i < timeNow; i++) {
+    //then it needs to compare each iteration of time with the current time from the previous variable
+    if (i <= timeNow) {
+      console.log("!!!!!!!!!!!!!!!!!");
+    }
+  }
 
-//     var makeTask = $("<textarea>")
-//       .addClass("description col-10 col-md-8 col-sm-8")
-//       .attr("id", "task-blocks" + index);
+  //then the for loop can have a conditional that says what to do
+  //if the time block is before the current time, do this...
+  // else if it is equal to current time do this..
+  // else if it is greater than current time, do this.
+}
 
-//     var makeSave = $("<button>")
-//       // .add("")
-//       .addClass("saveBtn col-1 col-md-2 col-sm-2")
-//       .attr("id", "store-block" + "Save" + index);
+//store text area function
+function keepTasks() {
+  var input = document.getElementById("task-block");
+  localStorage.setItem("input", "");
+  //locally store items from text area as needed
+  //retrieve tasks upon returning to page
+}
+function showTasks() {
+  var output = localStorage.getItem("input");
+}
 
-//     makeRow.append(makeTime);
-//     makeRow.append(makeTask);
-//     makeRow.append(makeSave);
-//     var toPrint = moment(workDay)
-//       .add(1 + index, "hours")
-//       .format("hh:mm A");
-//     $("#schedules").append(makeRow);
-//   }
-// }
-//click event, save info from tasks section to localStorage
+//on click events
 
-// workDay();
+handleUpdatingHours();
