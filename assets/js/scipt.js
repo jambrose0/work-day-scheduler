@@ -33,16 +33,21 @@ $("textarea").each(function (index) {
     $(this).addClass("future");
   }
   //get localStorage here
-  var loadTask = localStorage.getItem($(this).data("hour"));
-  $(this).text(loadTask);
+  var readTask = localStorage.getItem("toDo");
+  document.getElementById("task-block").value = readTask;
 });
 
-var saveTasks = function (event) {
+var taskSaver = function (event) {
   event.preventDefault();
-  localStorage.setItem(
-    $(this).siblings("h3").attr("id"),
-    $(this).siblings("textarea").val()
-  );
+  var toDo = document.getElementById("task-block").value;
+  localStorage.setItem("toDo", toDo);
 };
+// var taskLoad = function () {
 
-saveBtn.on("click", saveTasks);
+// };
+
+saveBtn.on("click", taskSaver);
+// localStorage.setItem(
+//   $(this).siblings("h3").attr("id"),
+//   $(this).siblings("textarea").val()
+// );
