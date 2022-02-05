@@ -8,21 +8,29 @@ var saves = document
 //function to check time and apply css as needed
 function handleUpdatingHours() {
   // establish a variable for the current time using moment.js
-
   var timeNow = moment();
-  // use a for loop that iterates through each time value you have set as your time variables,
-  for (var i = 0; i < timeNow; i++) {
-    //then it needs to compare each iteration of time with the current time from the previous variable
-    if (i <= timeNow) {
-      console.log("!!!!!!!!!!!!!!!!!");
-    }
+  if (timeNow < workHours) {
+    tasks.classList.add("past");
   }
-
-  //then the for loop can have a conditional that says what to do
-  //if the time block is before the current time, do this...
-  // else if it is equal to current time do this..
-  // else if it is greater than current time, do this.
+  if ((timeNow = workHours)) {
+    tasks.classList.add("present");
+  }
+  if (timeNow > workHours) {
+    tasks.classList.add("future");
+  }
 }
+// use a for loop that iterates through each time value you have set as your time variables,
+// for (var i = 0; i < timeNow; i++) {
+//then it needs to compare each iteration of time with the current time from the previous variable
+// if (i <= timeNow) {
+//   tasks.setAttribute("class", "past");
+// }
+// }
+
+//then the for loop can have a conditional that says what to do
+//if the time block is before the current time, do this...
+// else if it is equal to current time do this..
+// else if it is greater than current time, do this.
 
 //store text area function
 function keepTasks() {
