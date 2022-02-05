@@ -7,7 +7,6 @@ var saves = document
 
 //function to check time and apply css as needed
 function handleUpdatingHours() {
-  // establish a variable for the current time using moment.js
   var timeNow = moment();
   if (timeNow < workHours) {
     tasks.classList.add("past");
@@ -35,7 +34,8 @@ function handleUpdatingHours() {
 //store text area function
 function keepTasks() {
   var input = document.getElementById("task-block");
-  localStorage.setItem("input", "");
+  localStorage.setItem("task-block", input);
+  console.log("saved!!!!!!");
   //locally store items from text area as needed
   //retrieve tasks upon returning to page
 }
@@ -46,3 +46,4 @@ function showTasks() {
 //on click events
 
 handleUpdatingHours();
+showTasks();
