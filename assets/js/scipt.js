@@ -33,9 +33,18 @@ $("textarea").each(function (index) {
     $(this).addClass("future");
   }
   // get localStorage here
-  var readTask = localStorage.getItem($(this).text("textarea"));
+  var readTask = localStorage.getItem($(this).text(""));
   $(this).text(readTask);
 });
+
+$(".saveBtn").click(function () {
+  var taskSaver = localStorage.setItem(
+    $(this).siblings("h3").attr("id"),
+    $(this).siblings("textarea").text()
+  );
+  console.log(taskSaver);
+});
+
 // var taskSaver = function (event) {
 //   event.preventDefault();
 //   localStorage.setItem(
@@ -46,10 +55,3 @@ $("textarea").each(function (index) {
 // };
 
 // saveBtn.on("click", taskSaver);
-$(".saveBtn").click(function () {
-  var taskSaver = localStorage.setItem(
-    $(this).siblings("h3").attr("id"),
-    $(this).siblings("textarea").text()
-  );
-  console.log(taskSaver);
-});
