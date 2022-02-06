@@ -17,6 +17,12 @@ var displayTime = function () {
   var time = moment().format("dddd,h:mm a");
   $("#currentDay").html(time);
 };
+$(".saveBtn").click(function () {
+  var taskSaver = localStorage.setItem(
+    $(this).siblings("h3").attr("id"),
+    $(this).siblings(".description").val()
+  );
+});
 
 $(document).ready(function () {
   displayTime();
@@ -33,25 +39,7 @@ $("textarea").each(function (index) {
     $(this).addClass("future");
   }
   // get localStorage here
-  var readTask = localStorage.getItem($(this).text(""));
-  $(this).text(readTask);
+  var readTask = localStorage.getItem($(this).val());
+  console.log(readTask);
+  $(this).val(readTask);
 });
-
-$(".saveBtn").click(function () {
-  var taskSaver = localStorage.setItem(
-    $(this).siblings("h3").attr("id"),
-    $(this).siblings("textarea").text()
-  );
-  console.log(taskSaver);
-});
-
-// var taskSaver = function (event) {
-//   event.preventDefault();
-//   localStorage.setItem(
-//     $(this).siblings("h3").attr("id"),
-//     $(this).siblings("textarea").text("")
-//   );
-//   console.log("rawr");
-// };
-
-// saveBtn.on("click", taskSaver);
