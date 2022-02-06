@@ -39,7 +39,6 @@ $("textarea").each(function (index) {
     $(this).addClass("future");
   }
   // get localStorage here
-  var readTask = localStorage.getItem($(this).val());
-  console.log(readTask);
+  var readTask = localStorage.getItem($(this).siblings("h3").attr("id"));
   $(this).val(readTask);
 });
