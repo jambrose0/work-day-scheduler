@@ -32,15 +32,24 @@ $("textarea").each(function (index) {
   } else {
     $(this).addClass("future");
   }
-  //get localStorage here
-  var readTask = localStorage.getItem("toDo");
+  // get localStorage here
+  var readTask = localStorage.getItem($(this).text("textarea"));
+  $(this).text(readTask);
 });
-var taskSaver = function (event) {
-  event.preventDefault();
+// var taskSaver = function (event) {
+//   event.preventDefault();
+//   localStorage.setItem(
+//     $(this).siblings("h3").attr("id"),
+//     $(this).siblings("textarea").text("")
+//   );
+//   console.log("rawr");
+// };
 
-  localStorage.setItem(
-    $(this).siblings("h3").attr("id").$(this).siblings("textarea").val()
+// saveBtn.on("click", taskSaver);
+$(".saveBtn").click(function () {
+  var taskSaver = localStorage.setItem(
+    $(this).siblings("h3").attr("id"),
+    $(this).siblings("textarea").text()
   );
-};
-
-saveBtn.on("click", taskSaver);
+  console.log(taskSaver);
+});
