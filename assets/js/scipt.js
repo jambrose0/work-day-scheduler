@@ -34,20 +34,13 @@ $("textarea").each(function (index) {
   }
   //get localStorage here
   var readTask = localStorage.getItem("toDo");
-  document.getElementById("task-block").value = readTask;
 });
-
 var taskSaver = function (event) {
   event.preventDefault();
-  var toDo = document.getElementById("task-block").value;
-  localStorage.setItem("toDo", toDo);
-};
-// var taskLoad = function () {
 
-// };
+  localStorage.setItem(
+    $(this).siblings("h3").attr("id").$(this).siblings("textarea").val()
+  );
+};
 
 saveBtn.on("click", taskSaver);
-// localStorage.setItem(
-//   $(this).siblings("h3").attr("id"),
-//   $(this).siblings("textarea").val()
-// );
